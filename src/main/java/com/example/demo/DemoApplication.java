@@ -1,8 +1,8 @@
 package com.example.demo;
 
-import com.example.demo.system.dto.Account;
-import com.example.demo.system.dto.Money;
-import com.example.demo.system.dto.Transaction;
+import com.example.demo.exampleClass.Inheritance.Animal;
+import com.example.demo.exampleClass.Inheritance.Cat;
+import com.example.demo.system.model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -14,26 +14,37 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
 
-        /*
-         * Lab 1.1 Implement simple immutable Money class
-         */
-        demoMoneyClass();
-
-        /*
-         * Lab 2.1 Create three accounts and apply transactions
-         */
+//        /*
+//         * Lab 1.1 Implement simple immutable Money class
+//         */
+//        demoMoneyClass();
+//
+//        /*
+//         * Lab 2.1 Create three accounts and apply transactions
+//         */
         demoAccountAndTransactionClass();
+//
+//        /*
+//         * Lab 2.2 Use Set to remove duplicate account IDs
+//         */
+//        demoSet();
+//
+//        /*
+//         * Lab 2.3 Use Map to store balances and sum them
+//         */
+//		demoReduction();
 
-        /*
-         * Lab 2.2 Use Set to remove duplicate account IDs
-         */
-        demoSet();
+        TransactionDemo txn = new DomesticTransaction("T1234", new Money("50000", "LAK"));
+        txn.process();
 
-        /*
-         * Lab 2.3 Use Map to store balances and sum them
-         */
-		demoReduction();
+        animalSpeak(new Cat());
+
     }
+
+    public static void animalSpeak(Animal animal) {
+        animal.speak();
+    }
+
 
     public static void demoMoneyClass() {
         System.out.println("\nLab 1.1 Implement a simple immutable Money class");

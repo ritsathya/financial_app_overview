@@ -1,4 +1,4 @@
-package com.example.demo.system.dto;
+package com.example.demo.system.model;
 
 import java.util.ArrayList;
 import java.util.List;
