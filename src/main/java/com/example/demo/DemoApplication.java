@@ -33,8 +33,6 @@ public class DemoApplication {
          * Lab 2.3 Use Map to store balances and sum them
          */
 		demoReduction();
-
-
     }
 
     public static void demoMoneyClass() {
@@ -42,9 +40,6 @@ public class DemoApplication {
 
         Money a = new Money("0.10", "USD");
         Money b = new Money("0.20", "USD");
-
-        double balance = 0.1 + 0.2;
-        System.out.println(balance);
 
         System.out.println(a.add(b)); // prints exactly 0.30 USD
     }
