@@ -2,10 +2,14 @@ package com.example.demo;
 
 import com.example.demo.exampleClass.Inheritance.Animal;
 import com.example.demo.exampleClass.Inheritance.Cat;
+import com.example.demo.system.exception.BusinessException;
 import com.example.demo.system.model.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.PathVariable;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 
 @SpringBootApplication
@@ -14,37 +18,31 @@ public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
 
-//        /*
-//         * Lab 1.1 Implement simple immutable Money class
-//         */
+        /*
+         * Lab 1.1 Implement simple immutable Money class
+         */
 //        demoMoneyClass();
-//
-//        /*
-//         * Lab 2.1 Create three accounts and apply transactions
-//         */
-        demoAccountAndTransactionClass();
-//
-//        /*
-//         * Lab 2.2 Use Set to remove duplicate account IDs
-//         */
+
+        /*
+         * Lab 2.1 Create three accounts and apply transactions
+         */
+//        demoAccountAndTransactionClass();
+
+        /*
+         * Lab 2.2 Use Set to remove duplicate account IDs
+         */
 //        demoSet();
-//
-//        /*
-//         * Lab 2.3 Use Map to store balances and sum them
-//         */
+
+        /*
+         * Lab 2.3 Use Map to store balances and sum them
+         */
 //		demoReduction();
 
-        TransactionDemo txn = new DomesticTransaction("T1234", new Money("50000", "LAK"));
-        txn.process();
-
-        animalSpeak(new Cat());
-
+        BigDecimal a = new BigDecimal("6").setScale(2);
+        BigDecimal b = new BigDecimal("3").setScale(2);
+        BigDecimal c = a.divide(b, RoundingMode.HALF_UP);
+        System.out.println(c);
     }
-
-    public static void animalSpeak(Animal animal) {
-        animal.speak();
-    }
-
 
     public static void demoMoneyClass() {
         System.out.println("\nLab 1.1 Implement a simple immutable Money class");

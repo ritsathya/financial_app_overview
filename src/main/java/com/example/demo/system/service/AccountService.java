@@ -7,10 +7,11 @@ import com.example.demo.system.exception.LimitExceededException;
 import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class AccountService {
     private Map<String, BigDecimal> accounts = new HashMap<>();
-
+//    Logger logger = Logger.getLogger(AccountService.class.getName());
     public AccountService() {
         accounts.put("A1", new BigDecimal("1500.00"));
         accounts.put("A2", new BigDecimal("500.00"));
@@ -46,5 +47,7 @@ public class AccountService {
         // If all checks pass → process transfer
         accounts.put(from, fromBalance.subtract(amount));
         accounts.put(to, accounts.get(to).add(amount));
+
+//        logger.info(String.format("id=%s", "1234"));
     }
 }
